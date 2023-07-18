@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["autoprefixer", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:10.4.14"],\
+            ["classnames", "npm:2.3.2"],\
             ["eslint", "npm:8.45.0"],\
             ["eslint-config-next", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:13.4.10"],\
             ["next", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:13.4.10"],\
@@ -1062,6 +1063,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/chownr-npm-2.0.0-638f1c9c61-c57cf9dd07.zip/node_modules/chownr/",\
           "packageDependencies": [\
             ["chownr", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["classnames", [\
+        ["npm:2.3.2", {\
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.2-d2fdae468d-2c62199789.zip/node_modules/classnames/",\
+          "packageDependencies": [\
+            ["classnames", "npm:2.3.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4073,6 +4083,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["rest-countries-app", "workspace:."],\
             ["autoprefixer", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:10.4.14"],\
+            ["classnames", "npm:2.3.2"],\
             ["eslint", "npm:8.45.0"],\
             ["eslint-config-next", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:13.4.10"],\
             ["next", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:13.4.10"],\
