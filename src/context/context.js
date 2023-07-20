@@ -15,7 +15,6 @@ const getInitialDarkMode = () => {
     '(prefers-color-scheme:dark)'
   ).matches;
   const storedDarkMode = localStorage.getItem('darkTheme') === 'true';
-  console.log(storedDarkMode, 'stored dark mode');
   return storedDarkMode || prefersDarkMode;
 };
 
@@ -27,7 +26,6 @@ export const AppProvider = ({ children }) => {
   console.log(isDarkTheme, 'current state');
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
-    console.log(newDarkTheme, 'new dark theme');
     setIsDarkTheme(newDarkTheme);
     localStorage.setItem('darkTheme', newDarkTheme);
   };
