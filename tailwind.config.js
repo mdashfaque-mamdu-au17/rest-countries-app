@@ -14,6 +14,8 @@ module.exports = {
       colors: {
         'light-grey': '#2B3844',
         'primary-black': '#111517',
+        'light-grey-secondary': '#202C36',
+        'creame-white': '#FAFAFA',
       },
       boxShadow: {
         'nav-shadow': '0px 2px 4px 0px rgba(0, 0, 0, 0.06)',
