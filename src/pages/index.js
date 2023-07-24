@@ -40,9 +40,6 @@ export default function Home() {
       {/* country list */}
       <section>
         <CountryCard />
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
       </section>
     </main>
   );
