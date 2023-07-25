@@ -4,7 +4,13 @@ import classNames from 'classnames';
 import { useGlobalContext } from '@/context/context';
 import SubTitle from './SubTitle';
 
-const CountryCard = () => {
+const CountryCard = ({
+  imageSrc,
+  countryName,
+  region,
+  capital,
+  population,
+}) => {
   const { isDarkTheme } = useGlobalContext();
 
   const themeStyle = isDarkTheme
@@ -21,23 +27,22 @@ const CountryCard = () => {
       <div className="relative w-full h-[160px] rounded-t-[5px]">
         <Image
           fill
-          src="https://flagcdn.com/w320/pe.png"
+          src={imageSrc}
           alt="image"
           placeholder="blur"
-          blurDataURL="https://flagcdn.com/w320/pe.png"
-          objectFit="cover"
+          blurDataURL={imageSrc}
           className="rounded-t-[5px]"
         />
       </div>
 
       <div className="mt-6 ml-6">
         <h6 className="text-lg font-extrabold leading-[26px]">
-          United States of America
+          {countryName}
         </h6>
         <div className="flex flex-col gap-2 mt-4">
-          <SubTitle title="Population" detail="323,947,000" />
-          <SubTitle title="Region" detail="Americans" />
-          <SubTitle title="Capital" detail="Washington, D.C" />
+          <SubTitle title="Population" detail={population} />
+          <SubTitle title="Region" detail={region} />
+          <SubTitle title="Capital" detail={capital} />
         </div>
       </div>
     </div>

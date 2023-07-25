@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import useSWR from 'swr';
 import { useGlobalContext } from '@/context/context';
 import { Header, SearchBar, CountryCard } from '../components';
+import customFetch from '../../utils/axios';
+import { formatNumberWithCommas } from '../../utils/utility';
 
+const fetcher = (url) => customFetch.get(url).then((res) => res.data);
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState();
   const { isDarkTheme } = useGlobalContext();
@@ -14,6 +18,8 @@ export default function Home() {
   const handleSearchTerm = (e) => {
     setSearchTerm(e.target.value);
   };
+
+  const { data, error, isLoading } = useSWR('/all', fetcher);
 
   return (
     <main
@@ -39,7 +45,23 @@ export default function Home() {
 
       {/* country list */}
       <section>
-        <CountryCard />
+        {isLoading && <div>Loading...</div>}
+        {!isLoading &&
+          data.length > 0 &&
+          data?.map((country, index) => {
+            return (
+              <CountryCard
+                key={country?.name?.common}
+                imageSrc={country?.flags?.png}
+                countryName={country?.name?.common}
+                region={country?.region}
+                capital={country?.capital?.[0]}
+                population={formatNumberWithCommas(
+                  country?.population
+                )}
+              />
+            );
+          })}
       </section>
     </main>
   );
