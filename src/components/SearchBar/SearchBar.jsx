@@ -24,7 +24,7 @@ const SearchBar = ({
     <label
       htmlFor={id || name}
       className={classNames(
-        'h-12 w-full block  sm:max-w-[480px] rounded-[5px] shadow-search-shadow flex items-cneter sm:h-14 transition duration-300',
+        'h-12 w-full block  sm:w-[480px] rounded-[5px] shadow-search-shadow flex items-cneter sm:h-14 transition duration-300',
         themeStyle
       )}
     >

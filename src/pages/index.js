@@ -2,13 +2,21 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import useSWR from 'swr';
 import { useGlobalContext } from '@/context/context';
-import { Header, SearchBar, CountryCard } from '../components';
+import {
+  Header,
+  SearchBar,
+  CountryCard,
+  ListBoxSelect,
+} from '../components';
 import customFetch from '../../utils/axios';
 import { formatNumberWithCommas } from '../../utils/utility';
+import { regions } from '../../utils/regions';
 
 const fetcher = (url) => customFetch.get(url).then((res) => res.data);
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState();
+  const [selectedRegion, setSelectedRegion] = useState(regions[0]);
   const { isDarkTheme } = useGlobalContext();
 
   const themeStyle = isDarkTheme
@@ -29,8 +37,8 @@ export default function Home() {
       )}
     >
       <Header />
-      <div className="px-4 mt-6 max-w-[1278px] sm:mx-auto 2xl:px-0 md:mt-12">
-        <div>
+      <div className="px-4 mt-6 max-w-[1278px] sm:mx-auto 2xl:px-0 md:mt-12 md:flex md:justify-between md:items-center">
+        <div className="md:shrink-0">
           <SearchBar
             id="countrySearch"
             name="countrySearch"
@@ -41,10 +49,17 @@ export default function Home() {
             onChange={handleSearchTerm}
           />
         </div>
+        <div className="mt-10 md:mt-0">
+          <ListBoxSelect
+            selectedRegion={selectedRegion}
+            setSelectedRegion={setSelectedRegion}
+            regionOptions={regions}
+          />
+        </div>
       </div>
 
       {/* country list */}
-      <section>
+      <section className="max-w-[1278px] mt-8 mx-auto px-4 flex flex-wrap items-center justify-center gap-y-10 gap-x-10 md:justify-start lg:gap-x-[74px] lg:gap-y-[72px] 2xl:px-0 lg:mt-12">
         {isLoading && <div>Loading...</div>}
         {!isLoading &&
           data.length > 0 &&

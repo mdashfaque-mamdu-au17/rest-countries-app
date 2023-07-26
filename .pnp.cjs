@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@headlessui/react", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:1.7.15"],\
             ["autoprefixer", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:10.4.14"],\
             ["axios", "npm:1.4.0"],\
             ["classnames", "npm:2.3.2"],\
@@ -126,6 +127,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@eslint-js-npm-8.44.0-66b473d41b-fc53958322.zip/node_modules/@eslint/js/",\
           "packageDependencies": [\
             ["@eslint/js", "npm:8.44.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@headlessui/react", [\
+        ["npm:1.7.15", {\
+          "packageLocation": "./.yarn/cache/@headlessui-react-npm-1.7.15-9e188a0651-f2d11d5849.zip/node_modules/@headlessui/react/",\
+          "packageDependencies": [\
+            ["@headlessui/react", "npm:1.7.15"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:1.7.15", {\
+          "packageLocation": "./.yarn/__virtual__/@headlessui-react-virtual-d2a6f3bdb7/0/cache/@headlessui-react-npm-1.7.15-9e188a0651-f2d11d5849.zip/node_modules/@headlessui/react/",\
+          "packageDependencies": [\
+            ["@headlessui/react", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:1.7.15"],\
+            ["@types/react", null],\
+            ["@types/react-dom", null],\
+            ["client-only", "npm:0.0.1"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4186,6 +4214,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["rest-countries-app", "workspace:."],\
+            ["@headlessui/react", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:1.7.15"],\
             ["autoprefixer", "virtual:6efbcf0262bae46d20f62fbb711341237c4b3b24252d1acd82049fa5ea885a28831eaa3588b7d845796d5ab369d95fdf772294bda6fa265da4cfd352fcb259b9#npm:10.4.14"],\
             ["axios", "npm:1.4.0"],\
             ["classnames", "npm:2.3.2"],\
