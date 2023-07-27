@@ -15,7 +15,7 @@ import { regions } from '../../utils/regions';
 const fetcher = (url) => customFetch.get(url).then((res) => res.data);
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState();
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState(regions[0]);
   const { isDarkTheme } = useGlobalContext();
 
@@ -28,6 +28,37 @@ export default function Home() {
   };
 
   const { data, error, isLoading } = useSWR('/all', fetcher);
+
+  const regionsResults =
+    !isLoading && selectedRegion.name === 'All'
+      ? data
+      : data?.filter((country) => {
+          return (
+            country.region.toLowerCase() ===
+            selectedRegion.name.toLowerCase()
+          );
+        });
+
+  const searchResults =
+    !isLoading &&
+    data?.filter((country) => {
+      return country.name.common
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+    });
+
+  let combinedResults;
+  if (selectedRegion.name === 'All' && !searchTerm) {
+    combinedResults = data;
+  } else if (selectedRegion.name === 'All') {
+    combinedResults = searchResults;
+  } else if (!searchTerm) {
+    combinedResults = regionsResults;
+  } else {
+    combinedResults = searchResults.filter((country) => {
+      return regionsResults.includes(country);
+    });
+  }
 
   return (
     <main
@@ -62,8 +93,8 @@ export default function Home() {
       <section className="max-w-[1278px] mt-8 mx-auto px-4 flex flex-wrap items-center justify-center gap-y-10 gap-x-10 md:justify-start lg:gap-x-[74px] lg:gap-y-[72px] 2xl:px-0 lg:mt-12">
         {isLoading && <div>Loading...</div>}
         {!isLoading &&
-          data.length > 0 &&
-          data?.map((country, index) => {
+          combinedResults.length > 0 &&
+          combinedResults?.map((country, index) => {
             return (
               <CountryCard
                 key={country?.name?.common}
