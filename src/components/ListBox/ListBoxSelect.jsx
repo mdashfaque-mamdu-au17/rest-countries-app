@@ -36,6 +36,7 @@ const ListBoxSelect = ({
                     : '/images/down-arrow-light.svg'
                 }
                 style={{ objectFit: 'contain' }}
+                alt="icon"
               />
             </span>
           </Listbox.Button>
