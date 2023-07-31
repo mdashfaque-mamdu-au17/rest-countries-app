@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import classNames from 'classnames';
 import { useGlobalContext } from '@/context/context';
 import SubTitle from './SubTitle';
@@ -18,11 +19,12 @@ const CountryCard = ({
     : 'bg-white text-primary-black';
 
   return (
-    <div
+    <Link
       className={classNames(
         'w-[264px] h-[336px] rounded-[5px] shadow-card-shadow transition duration-300',
         themeStyle
       )}
+      href={`/detail/${countryName}`}
     >
       <div className="relative w-full h-[160px] rounded-t-[5px]">
         <Image
@@ -45,7 +47,7 @@ const CountryCard = ({
           <SubTitle title="Capital" detail={capital} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
