@@ -19,15 +19,13 @@ const getInitialDarkMode = () => {
 };
 
 export const AppProvider = ({ children }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    getInitialDarkMode()
-  );
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   console.log(isDarkTheme, 'current state');
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
     setIsDarkTheme(newDarkTheme);
-    localStorage.setItem('darkTheme', newDarkTheme);
+    // localStorage.setItem('darkTheme', newDarkTheme);
   };
 
   return (
