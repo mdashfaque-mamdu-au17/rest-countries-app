@@ -7,6 +7,7 @@ import {
   SearchBar,
   CountryCard,
   ListBoxSelect,
+  CardLoaders,
 } from '../components';
 import customFetch from '../../utils/axios';
 import { formatNumberWithCommas } from '../../utils/utility';
@@ -91,7 +92,7 @@ export default function Home() {
 
       {/* country list */}
       <section className="max-w-[1278px] mt-8 mx-auto px-4 flex flex-wrap items-center justify-center gap-y-10 gap-x-10 md:justify-start lg:gap-x-[74px] lg:gap-y-[72px] 2xl:px-0 lg:mt-12">
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <CardLoaders />}
         {!isLoading &&
           combinedResults.length > 0 &&
           combinedResults?.map((country, index) => {
