@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import classNames from 'classnames';
-import { useGlobalContext } from '@/context/context';
+import { useGlobalContext } from '../../context/context';
 
 const ListBoxSelect = ({
   selectedRegion,

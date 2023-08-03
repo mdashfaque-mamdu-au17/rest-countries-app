@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import useSWR from 'swr';
-import { useGlobalContext } from '@/context/context';
+import { useGlobalContext } from '../context/context';
 import {
   Header,
   SearchBar,

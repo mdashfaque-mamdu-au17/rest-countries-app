@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useGlobalContext } from '@/context/context';
+import { useGlobalContext } from '../../context/context';
 
 const CardLoader = () => {
   const { isDarkTheme } = useGlobalContext();

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
-import { useGlobalContext } from '@/context/context';
+import { useGlobalContext } from '../../context/context';
 
 const Button = () => {
   const { isDarkTheme } = useGlobalContext();

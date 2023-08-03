@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useGlobalContext } from '@/context/context';
+import { useGlobalContext } from '../../context/context';
 
 const DetailLoader = () => {
   const { isDarkTheme } = useGlobalContext();

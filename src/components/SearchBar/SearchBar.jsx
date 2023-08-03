@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useGlobalContext } from '@/context/context';
+import { useGlobalContext } from '../../context/context';
 
 const SearchBar = ({
   id,

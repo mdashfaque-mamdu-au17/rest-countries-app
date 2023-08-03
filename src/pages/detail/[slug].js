@@ -3,9 +3,14 @@ import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { Header, Button, SubTitle, DetailLoader } from '@/components';
+import {
+  Header,
+  Button,
+  SubTitle,
+  DetailLoader,
+} from '../../components';
 import customFetch from '../../../utils/axios';
-import { useGlobalContext } from '@/context/context';
+import { useGlobalContext } from '../../context/context';
 import { formatNumberWithCommas } from '../../../utils/utility';
 
 const fetcher = (url) => customFetch.get(url).then((res) => res.data);
