@@ -5,6 +5,7 @@ import ListBoxSelect from './ListBox/ListBoxSelect';
 import Button from './Button/Button';
 import SubTitle from './CountryCard/SubTitle';
 import CardLoaders from './Loaders/CardLoaders';
+import DetailLoader from './Loaders/DetailLoader';
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   Button,
   SubTitle,
   CardLoaders,
+  DetailLoader,
 };
