@@ -138,9 +138,12 @@ export default function Page() {
                             const lastIndex =
                               Object.values(country?.languages)
                                 .length - 1;
-                            return `${language}${
-                              lastIndex !== index ? ', ' : ''
-                            }`;
+                            return (
+                              <React.Fragment key={index}>
+                                `${language}$
+                                {lastIndex !== index ? ', ' : ''}`
+                              </React.Fragment>
+                            );
                           })}
                           styles="leading-8 md:text-base md:leading-8"
                         />
