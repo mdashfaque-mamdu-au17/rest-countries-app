@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { Header, Button, SubTitle } from '@/components';
+import { Header, Button, SubTitle, DetailLoader } from '@/components';
 import customFetch from '../../../utils/axios';
 import { useGlobalContext } from '@/context/context';
 import { formatNumberWithCommas } from '../../../utils/utility';
@@ -56,7 +56,7 @@ export default function Page() {
           <Button />
         </div>
 
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <DetailLoader />}
         {!isLoading &&
           data.length > 0 &&
           data?.map((country) => {
