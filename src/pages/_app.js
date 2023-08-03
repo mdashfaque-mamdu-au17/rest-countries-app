@@ -1,8 +1,8 @@
 import { AppProvider } from '../context/context';
 import '../styles/globals.css';
-import { Inter } from 'next/font/google';
+import { Nunito_Sans } from 'next/font/google';
 
-const nunitoSans = Inter({
+const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
   variable: '--font-inter',
 });
