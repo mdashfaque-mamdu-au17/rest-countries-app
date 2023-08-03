@@ -8,29 +8,33 @@ import {
 const AppContext = createContext();
 
 const getInitialDarkMode = () => {
-  if (typeof window === 'undefined') {
-    return;
+  if (typeof window !== 'undefined') {
+    const prefersDarkMode = window.matchMedia(
+      '(prefers-color-scheme:dark)'
+    ).matches;
+    const storedDarkMode = localStorage.getItem('darkTheme');
+    if (storedDarkMode) {
+      return storedDarkMode === 'true' ? true : false;
+    } else {
+      return prefersDarkMode;
+    }
   }
-  const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme:dark)'
-  ).matches;
-  const storedDarkMode = localStorage.getItem('darkTheme') === 'true';
-  return storedDarkMode || prefersDarkMode;
 };
 
 export const AppProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState();
 
-  console.log(isDarkTheme, 'current state');
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
     setIsDarkTheme(newDarkTheme);
     localStorage.setItem('darkTheme', newDarkTheme);
   };
 
-  // useEffect(() => {
-  //   setIsDarkTheme(getInitialDarkMode());
-  // }, []);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsDarkTheme(getInitialDarkMode());
+    }
+  }, []);
 
   return (
     <AppContext.Provider value={{ isDarkTheme, toggleDarkTheme }}>
