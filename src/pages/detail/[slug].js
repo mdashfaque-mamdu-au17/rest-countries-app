@@ -61,7 +61,10 @@ export default function Page() {
           data.length > 0 &&
           data?.map((country) => {
             return (
-              <div className="mt-16 xl:flex xl:gap-[144px]">
+              <div
+                className="mt-16 xl:flex xl:gap-[144px]"
+                key={country?.name?.common}
+              >
                 <div className="relative w-full h-[275px] md:max-w-[559px] md:h-[483px]">
                   <Image
                     fill
@@ -138,12 +141,9 @@ export default function Page() {
                             const lastIndex =
                               Object.values(country?.languages)
                                 .length - 1;
-                            return (
-                              <React.Fragment key={index}>
-                                `${language}$
-                                {lastIndex !== index ? ', ' : ''}`
-                              </React.Fragment>
-                            );
+                            return `${language}${
+                              lastIndex !== index ? ', ' : ''
+                            }`;
                           })}
                           styles="leading-8 md:text-base md:leading-8"
                         />
@@ -160,7 +160,7 @@ export default function Page() {
                       <div className="flex gap-2.5 mt-4 md:mt-0">
                         {borderCountries
                           .slice(0, 3)
-                          ?.map((country) => {
+                          ?.map((country, index) => {
                             return (
                               <div
                                 className={classNames(
