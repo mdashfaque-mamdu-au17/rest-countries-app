@@ -92,6 +92,16 @@ export default function Home() {
 
       {/* country list */}
       <section className="max-w-[1278px] mt-8 mx-auto px-4 flex flex-wrap items-center justify-center gap-y-10 gap-x-10 md:justify-start lg:gap-x-[74px] lg:gap-y-[72px] 2xl:px-0 lg:mt-12">
+        {!isLoading && combinedResults.length < 1 && (
+          <h3
+            className={classNames(
+              'text-2xl',
+              isDarkTheme ? 'text-white' : 'text-primary-black'
+            )}
+          >
+            No Results Found...
+          </h3>
+        )}
         {isLoading && <CardLoaders />}
         {!isLoading &&
           combinedResults.length > 0 &&
